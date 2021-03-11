@@ -1,0 +1,133 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik&display=swap');
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+:root {
+    font-size: 12pt;
+    --c-bg: #fff;
+    --c-accent: #0ff6c4;
+    --c-font-dark: #3c3b45;
+    --c-link: #0cb7f7;
+}
+
+*, a, button {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: var(--c-font-dark);
+}
+
+body{
+    background-color: var(--c-bg);
+}
+
+.navbar{
+    position:fixed;
+    font-size: 3rem;
+    padding: 12px;
+}
+
+.body-container {
+    background-color: #fff;
+}
+
+/*landing page*/
+.landing-page {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.landing-soger-vikar, .landing-er-vikar {
+    width: 40vw;
+    height: 80vh;
+
+    margin: 10vh 10vw 10vh 10vw;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.landing-page-card h1 {
+    color: #fff;
+    padding: 1rem 2rem;
+    background-color: var(--c-accent);
+    transition: .1s ease-in;
+}
+
+.landing-soger-vikar {
+    border: 0.5rem solid var(--c-accent);
+    margin-right: 0vw;
+}
+
+.landing-er-vikar {
+    border: 0.5rem solid var(--c-accent);
+    margin-left: 0vw;
+}
+
+.landing-page-card {
+    background-color: #fff;
+    transition: .1s ease-in;
+}
+
+.landing-page-card:hover {
+    transform: translate(-1rem, -1rem);
+    box-shadow: var(--c-font-dark) 1rem 1rem;
+    transition: .1s ease-out;
+}
+
+.landing-page-card:hover h1 {
+    transform: translate(-1rem, -1rem);
+    box-shadow: var(--c-link) 1rem 1rem;
+    transition: .1s ease-out .1s;
+}
+
+/*Profil*/
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding-top:100px;
+    width: 80%;
+}
+
+.profile-personinfo-container {
+    width: 100%;
+}
+
+/*footer*/
+.footer-container {
+    margin: 4rem auto;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+
+.footer-container div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container div p, a{
+    margin: 0.5rem 0;
+}
+
+.footer-container div a {
+    color: var(--c-link);
+}
+
+/*Browse*/
+.browse-container {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

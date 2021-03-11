@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Vikarapp</title>
+    <script src="https://kit.fontawesome.com/9df18aaffa.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar">
+                @Html.ActionLink("Vikarapp", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    </div>
+    
+    <div class="body-container">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+        <div class="footer-container">
+            <div>
+                <p>Thode Studios</p>
+                <p>Klassevej 69</p>
+                <p>8600 Silkeborg</p>        
+                <p>42 04 20 69</p>
+                <p>thodestudios@gmail.com</p>
+            </div>
+            <div>
+                <a href="https://www.w3schools.com">FAQ</a>
+                <a href="https://www.w3schools.com">Driftstatus</a>
+                <a href="https://www.w3schools.com">Cookie- og privatlivspolitik</a>
+                <a href="https://www.w3schools.com">Hjælp til min profil</a>
+            </div>
+        </div>
+
+</body>
+</html>

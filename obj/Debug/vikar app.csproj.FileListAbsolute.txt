@@ -1,0 +1,83 @@
+D:\Webdev\asp net\vikar app\bin\vikar app.dll.config
+D:\Webdev\asp net\vikar app\bin\vikar app.dll
+D:\Webdev\asp net\vikar app\bin\vikar app.pdb
+D:\Webdev\asp net\vikar app\bin\roslyn\csc.exe
+D:\Webdev\asp net\vikar app\bin\roslyn\csc.exe.config
+D:\Webdev\asp net\vikar app\bin\roslyn\csc.rsp
+D:\Webdev\asp net\vikar app\bin\roslyn\csi.exe
+D:\Webdev\asp net\vikar app\bin\roslyn\csi.exe.config
+D:\Webdev\asp net\vikar app\bin\roslyn\csi.rsp
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Webdev\asp net\vikar app\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.AppContext.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Collections.Immutable.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Console.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Globalization.Calendars.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.IO.Compression.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.IO.FileSystem.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Net.Http.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Net.Sockets.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Reflection.Metadata.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.ValueTuple.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Xml.XPath.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Webdev\asp net\vikar app\bin\roslyn\vbc.exe
+D:\Webdev\asp net\vikar app\bin\roslyn\vbc.exe.config
+D:\Webdev\asp net\vikar app\bin\roslyn\vbc.rsp
+D:\Webdev\asp net\vikar app\bin\roslyn\VBCSCompiler.exe
+D:\Webdev\asp net\vikar app\bin\roslyn\VBCSCompiler.exe.config
+D:\Webdev\asp net\vikar app\bin\Antlr3.Runtime.dll
+D:\Webdev\asp net\vikar app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Webdev\asp net\vikar app\bin\Microsoft.Web.Infrastructure.dll
+D:\Webdev\asp net\vikar app\bin\Newtonsoft.Json.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.Helpers.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.Mvc.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.Optimization.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.Razor.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.WebPages.Deployment.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.WebPages.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.WebPages.Razor.dll
+D:\Webdev\asp net\vikar app\bin\WebGrease.dll
+D:\Webdev\asp net\vikar app\bin\System.Web.Helpers.xml
+D:\Webdev\asp net\vikar app\bin\System.Web.Mvc.xml
+D:\Webdev\asp net\vikar app\bin\System.Web.Optimization.xml
+D:\Webdev\asp net\vikar app\bin\System.Web.Razor.xml
+D:\Webdev\asp net\vikar app\bin\System.Web.WebPages.xml
+D:\Webdev\asp net\vikar app\bin\System.Web.WebPages.Deployment.xml
+D:\Webdev\asp net\vikar app\bin\System.Web.WebPages.Razor.xml
+D:\Webdev\asp net\vikar app\bin\Newtonsoft.Json.xml
+D:\Webdev\asp net\vikar app\bin\Antlr3.Runtime.pdb
+D:\Webdev\asp net\vikar app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Webdev\asp net\vikar app\obj\Debug\vikar app.csprojAssemblyReference.cache
+D:\Webdev\asp net\vikar app\obj\Debug\vikar app.csproj.CoreCompileInputs.cache
+D:\Webdev\asp net\vikar app\obj\Debug\vikar app.csproj.CopyComplete
+D:\Webdev\asp net\vikar app\obj\Debug\vikar app.dll
+D:\Webdev\asp net\vikar app\obj\Debug\vikar app.pdb
+D:\Webdev\asp net\vikar app\bin\EntityFramework.dll
+D:\Webdev\asp net\vikar app\bin\EntityFramework.SqlServer.dll
+D:\Webdev\asp net\vikar app\bin\EntityFramework.xml
+D:\Webdev\asp net\vikar app\bin\EntityFramework.SqlServer.xml
