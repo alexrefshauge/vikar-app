@@ -23,6 +23,19 @@ font-family: 'Rubik', sans-serif;
     color: var(--c-font-dark);
 }
 
+input {
+    border: 1px solid #808080;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 body{
     background-color: var(--c-bg);
 }
@@ -130,4 +143,31 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/*Login*/
+.login-container {
+    padding-top: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+.login-box form  *{
+    font-size: 1.5rem;
+    margin: .5rem;
+    padding: .5rem;
+}
+
+.login-box form h1 {
+    font-size: 3rem;
+}
+
+
+.login-box form{
+    margin: 50px;
+}
+.login-box{
+    width: 25%;
+    border-radius: 25px;
+    border: 8px solid var(--c-accent);
 }

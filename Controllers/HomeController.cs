@@ -30,7 +30,12 @@ namespace vikar_app.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult Signin()
+        {
+            return View();
+        }
+
         public ActionResult Browse()
         {
             return View();
