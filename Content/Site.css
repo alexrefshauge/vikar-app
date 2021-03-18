@@ -10,7 +10,7 @@ font-family: 'Rubik', sans-serif;
     --c-bg: #fff;
     --c-accent: #0ff6c4;
     --c-font-dark: #3c3b45;
-    --c-link: #0cb7f7;
+    --c-link: #0886b4;
 }
 
 *, a, button {
@@ -23,7 +23,7 @@ font-family: 'Rubik', sans-serif;
     color: var(--c-font-dark);
 }
 
-input {
+input, select {
     border: 1px solid #808080;
 }
 
