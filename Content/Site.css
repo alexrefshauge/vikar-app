@@ -8,7 +8,9 @@ font-family: 'Rubik', sans-serif;
 :root {
     font-size: 12pt;
     --c-bg: #fff;
-    --c-accent: #0ff6c4;
+    --c-bg-grey: #e9f1f3;
+    --c-main-green: #0af590;
+    --c-main-blue: #0bf3f3;
     --c-font-dark: #3c3b45;
     --c-link: #0886b4;
 }
@@ -40,10 +42,20 @@ body{
     background-color: var(--c-bg);
 }
 
-.navbar{
-    position:fixed;
-    font-size: 3rem;
-    padding: 12px;
+.nav ul {
+    list-style: none;
+}
+
+.nav{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size: 2.5rem;
+    padding:1rem 2rem;
+    box-sizing:border-box;
+
+    background-color:var(--c-bg-grey);
 }
 
 .body-container {
@@ -52,58 +64,51 @@ body{
 
 /*landing page*/
 .landing-page {
+    margin-top:3rem;
     display: flex;
     flex-direction: row;
+    justify-content:space-evenly;
     width: 100%;
 }
 
 .landing-soger-vikar, .landing-er-vikar {
-    width: 40vw;
-    height: 80vh;
 
-    margin: 10vh 10vw 10vh 10vw;
-
-    display: flex;
-    justify-content:center;
-    align-items: center;
 }
 
-.landing-page-card h1 {
+.landing-page-card h1:first-of-type{
+    margin-bottom:3rem;
+    font-size:4rem;
     color: #fff;
-    padding: 1rem 2rem;
-    background-color: var(--c-accent);
-    transition: .1s ease-in;
 }
 
-.landing-soger-vikar {
-    border: 0.5rem solid var(--c-accent);
-    margin-right: 0vw;
-}
-
-.landing-er-vikar {
-    border: 0.5rem solid var(--c-accent);
-    margin-left: 0vw;
+.landing-page-card h1:last-of-type {
+    margin-top:2rem;
+    padding:0.5rem 5rem;
+    border-radius: 9999px;
+    background-color: #fff;
 }
 
 .landing-page-card {
-    background-color: #fff;
-    transition: .1s ease-in;
+    height: 80vh;
+    width:500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, var(--c-main-blue), var(--c-main-green));
+    opacity: 0.8;
+}
+
+.landing-page-card i {
+    color:#fff;
+    font-size:4rem;
 }
 
 .landing-page-card:hover {
-    transform: translate(-1rem, -1rem);
-    box-shadow: var(--c-font-dark) 1rem 1rem;
-    transition: .1s ease-out;
+    opacity: 1;
 }
-
-.landing-page-card:hover h1 {
-    transform: translate(-1rem, -1rem);
-    box-shadow: var(--c-link) 1rem 1rem;
-    transition: .1s ease-out .1s;
-}
-
-/*Profil*/
-.profile-container {
+    /*Profil*/
+    .profile-container {
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -129,7 +134,7 @@ body{
     flex-direction: column;
 }
 
-.footer-container div p, a{
+.footer-container div p, .footer-container div a {
     margin: 0.5rem 0;
 }
 
@@ -147,7 +152,7 @@ body{
 
 /*Login*/
 .login-container {
-    padding-top: 200px;
+    padding-top: 80px;
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
@@ -169,5 +174,5 @@ body{
 .login-box{
     width: 25%;
     border-radius: 25px;
-    border: 8px solid var(--c-accent);
+    border: 8px solid var(--c-main-green);
 }

@@ -15,7 +15,7 @@ namespace vikar_app
             //vores connectionstring hentes fra Web.config
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Entities"].ConnectionString);
             connection.Open();
-            
+            string queryAddUser = "insert into ";
         }
     }
 }
