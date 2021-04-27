@@ -12,18 +12,10 @@ namespace vikar_app
     using System;
     using System.Collections.Generic;
     
-    public partial class Profil
+    public partial class Login
     {
-        public int Bruger_Id { get; set; }
-        public string Navn { get; set; }
-        public string Efternavn { get; set; }
-        public Nullable<int> Alder { get; set; }
-        public Nullable<int> Køn { get; set; }
-        public Nullable<int> Område { get; set; }
-        public string Bio { get; set; }
-        public byte[] Profilbillede { get; set; }
-        public string Tlf { get; set; }
-        public string Email { get; set; }
+        public int Login_Id { get; set; }
+        public string Brugernavn { get; set; }
         public string Kodeord { get; set; }
     }
 }

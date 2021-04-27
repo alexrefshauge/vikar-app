@@ -38,7 +38,7 @@ form {
     flex-direction: column;
 }
 
-body{
+body {
     background-color: var(--c-bg);
 }
 
@@ -46,18 +46,21 @@ body{
     list-style: none;
 }
 
-.nav{
+.nav {
     width:100%;
     display:flex;
     flex-direction: row;
     justify-content:space-between;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding:1rem 2rem;
     box-sizing:border-box;
 
     background-color:var(--c-bg-grey);
 }
 
+.nav-user-email {
+    font-size: 1.5rem;
+}
 .body-container {
     background-color: #fff;
 }

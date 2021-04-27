@@ -136,6 +136,12 @@
     <Compile Include="Kommentar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Køn.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +159,9 @@
     </Compile>
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\DataHandlerStatus.cs" />
+    <Compile Include="Område.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Profil.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -174,8 +183,8 @@
     <None Include="Notes.md" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -203,12 +212,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Browse.cshtml" />
-    <Content Include="Views\Home\Profile.cshtml" />
-    <Content Include="Views\Home\Signin.cshtml" />
+    <Content Include="Views\Hjem\Om.cshtml" />
+    <Content Include="Views\Hjem\Kontakt.cshtml" />
+    <Content Include="Views\Hjem\Index.cshtml" />
+    <Content Include="Views\Hjem\Gennemse.cshtml" />
+    <Content Include="Views\Hjem\Profil.cshtml" />
+    <Content Include="Views\Hjem\Login.cshtml" />
+    <Content Include="Views\Hjem\RedigerProfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

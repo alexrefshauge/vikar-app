@@ -12,10 +12,9 @@ namespace vikar_app
     using System;
     using System.Collections.Generic;
     
-    public partial class Kommentar
+    public partial class Område
     {
-        public int Kommentar_Id { get; set; }
-        public int Bruger_Id { get; set; }
-        public string Kommentar1 { get; set; }
+        public int Område_Id { get; set; }
+        public string Område1 { get; set; }
     }
 }

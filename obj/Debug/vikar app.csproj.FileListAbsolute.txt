@@ -72,7 +72,6 @@ D:\Webdev\asp net\vikar app\bin\System.Web.WebPages.Razor.xml
 D:\Webdev\asp net\vikar app\bin\Newtonsoft.Json.xml
 D:\Webdev\asp net\vikar app\bin\Antlr3.Runtime.pdb
 D:\Webdev\asp net\vikar app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Webdev\asp net\vikar app\obj\Debug\vikar app.csprojAssemblyReference.cache
 D:\Webdev\asp net\vikar app\obj\Debug\vikar app.csproj.CoreCompileInputs.cache
 D:\Webdev\asp net\vikar app\obj\Debug\vikar app.csproj.CopyComplete
 D:\Webdev\asp net\vikar app\obj\Debug\vikar app.dll
@@ -164,3 +163,4 @@ C:\Users\sande\Documents\GitHub\vikar-app\obj\Debug\vikar app.csproj.CopyComplet
 C:\Users\sande\Documents\GitHub\vikar-app\obj\Debug\vikar app.dll
 C:\Users\sande\Documents\GitHub\vikar-app\obj\Debug\vikar app.pdb
 C:\Users\sande\Documents\GitHub\vikar-app\obj\Debug\vikar app.csproj.CoreCompileInputs.cache
+D:\Webdev\asp net\vikar app\obj\Debug\vikar app.csprojAssemblyReference.cache

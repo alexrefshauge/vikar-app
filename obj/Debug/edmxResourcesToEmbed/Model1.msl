@@ -1,17 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="VikarEntity">
     <EntitySetMapping Name="Kommentars">
       <EntityTypeMapping TypeName="Model.Kommentar">
         <MappingFragment StoreEntitySet="Kommentar">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Kommentar_Id" ColumnName="Kommentar Id" />
+          <ScalarProperty Name="Bruger_Id" ColumnName="Bruger Id" />
+          <ScalarProperty Name="Kommentar1" ColumnName="Kommentar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Køn">
+      <EntityTypeMapping TypeName="Model.Køn">
+        <MappingFragment StoreEntitySet="Køn">
+          <ScalarProperty Name="Køn_Id" ColumnName="Køn Id" />
+          <ScalarProperty Name="Køn1" ColumnName="Køn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="Model.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Login_Id" ColumnName="Login Id" />
+          <ScalarProperty Name="Brugernavn" ColumnName="Brugernavn" />
+          <ScalarProperty Name="Kodeord" ColumnName="Kodeord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Område">
+      <EntityTypeMapping TypeName="Model.Område">
+        <MappingFragment StoreEntitySet="Område">
+          <ScalarProperty Name="Område_Id" ColumnName="Område Id" />
+          <ScalarProperty Name="Område1" ColumnName="Område" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Profils">
       <EntityTypeMapping TypeName="Model.Profil">
         <MappingFragment StoreEntitySet="Profil">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Bruger_Id" ColumnName="Bruger Id" />
+          <ScalarProperty Name="Navn" ColumnName="Navn" />
+          <ScalarProperty Name="Efternavn" ColumnName="Efternavn" />
+          <ScalarProperty Name="Alder" ColumnName="Alder" />
+          <ScalarProperty Name="Køn" ColumnName="Køn" />
+          <ScalarProperty Name="Område" ColumnName="Område" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="Profilbillede" ColumnName="Profilbillede" />
+          <ScalarProperty Name="Tlf" ColumnName="Tlf" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Kodeord" ColumnName="Kodeord" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

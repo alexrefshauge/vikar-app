@@ -7,18 +7,55 @@
       <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Kommentar">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Kommentar Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kommentar Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bruger Id" Type="int" Nullable="false" />
+          <Property Name="Kommentar" Type="char" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Køn">
+          <Key>
+            <PropertyRef Name="Køn Id" />
+          </Key>
+          <Property Name="Køn Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Køn" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Login Id" />
+          </Key>
+          <Property Name="Login Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Brugernavn" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Kodeord" Type="char" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Område">
+          <Key>
+            <PropertyRef Name="Område Id" />
+          </Key>
+          <Property Name="Område Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Område" Type="char" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Profil">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Bruger Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bruger Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Navn" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Efternavn" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Alder" Type="int" />
+          <Property Name="Køn" Type="int" />
+          <Property Name="Område" Type="int" />
+          <Property Name="Bio" Type="char" MaxLength="255" />
+          <Property Name="Profilbillede" Type="binary" MaxLength="50" />
+          <Property Name="Tlf" Type="char" MaxLength="8" />
+          <Property Name="Email" Type="char" MaxLength="63" Nullable="false" />
+          <Property Name="Kodeord" Type="char" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Kommentar" EntityType="Self.Kommentar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Køn" EntityType="Self.Køn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Område" EntityType="Self.Område" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profil" EntityType="Self.Profil" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
@@ -28,18 +65,55 @@
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Kommentar">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Kommentar_Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kommentar_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bruger_Id" Type="Int32" Nullable="false" />
+          <Property Name="Kommentar1" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Køn">
+          <Key>
+            <PropertyRef Name="Køn_Id" />
+          </Key>
+          <Property Name="Køn_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Køn1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Login_Id" />
+          </Key>
+          <Property Name="Login_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brugernavn" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Kodeord" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Område">
+          <Key>
+            <PropertyRef Name="Område_Id" />
+          </Key>
+          <Property Name="Område_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Område1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Profil">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Bruger_Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bruger_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Navn" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Efternavn" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Alder" Type="Int32" />
+          <Property Name="Køn" Type="Int32" />
+          <Property Name="Område" Type="Int32" />
+          <Property Name="Bio" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="Profilbillede" Type="Binary" MaxLength="50" FixedLength="true" />
+          <Property Name="Tlf" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="63" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Kodeord" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="VikarEntity" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Kommentars" EntityType="Self.Kommentar" />
+          <EntitySet Name="Køn" EntityType="Self.Køn" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="Område" EntityType="Self.Område" />
           <EntitySet Name="Profils" EntityType="Self.Profil" />
         </EntityContainer>
       </Schema>
@@ -47,18 +121,55 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="VikarEntity">
           <EntitySetMapping Name="Kommentars">
             <EntityTypeMapping TypeName="Model.Kommentar">
               <MappingFragment StoreEntitySet="Kommentar">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Kommentar_Id" ColumnName="Kommentar Id" />
+                <ScalarProperty Name="Bruger_Id" ColumnName="Bruger Id" />
+                <ScalarProperty Name="Kommentar1" ColumnName="Kommentar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Køn">
+            <EntityTypeMapping TypeName="Model.Køn">
+              <MappingFragment StoreEntitySet="Køn">
+                <ScalarProperty Name="Køn_Id" ColumnName="Køn Id" />
+                <ScalarProperty Name="Køn1" ColumnName="Køn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="Model.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Login_Id" ColumnName="Login Id" />
+                <ScalarProperty Name="Brugernavn" ColumnName="Brugernavn" />
+                <ScalarProperty Name="Kodeord" ColumnName="Kodeord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Område">
+            <EntityTypeMapping TypeName="Model.Område">
+              <MappingFragment StoreEntitySet="Område">
+                <ScalarProperty Name="Område_Id" ColumnName="Område Id" />
+                <ScalarProperty Name="Område1" ColumnName="Område" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Profils">
             <EntityTypeMapping TypeName="Model.Profil">
               <MappingFragment StoreEntitySet="Profil">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Bruger_Id" ColumnName="Bruger Id" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="Efternavn" ColumnName="Efternavn" />
+                <ScalarProperty Name="Alder" ColumnName="Alder" />
+                <ScalarProperty Name="Køn" ColumnName="Køn" />
+                <ScalarProperty Name="Område" ColumnName="Område" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="Profilbillede" ColumnName="Profilbillede" />
+                <ScalarProperty Name="Tlf" ColumnName="Tlf" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Kodeord" ColumnName="Kodeord" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

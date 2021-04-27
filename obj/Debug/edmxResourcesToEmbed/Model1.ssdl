@@ -2,18 +2,55 @@
 <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Kommentar">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Kommentar Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kommentar Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bruger Id" Type="int" Nullable="false" />
+    <Property Name="Kommentar" Type="char" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Køn">
+    <Key>
+      <PropertyRef Name="Køn Id" />
+    </Key>
+    <Property Name="Køn Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Køn" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Login Id" />
+    </Key>
+    <Property Name="Login Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brugernavn" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Kodeord" Type="char" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Område">
+    <Key>
+      <PropertyRef Name="Område Id" />
+    </Key>
+    <Property Name="Område Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Område" Type="char" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="Profil">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Bruger Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bruger Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Navn" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Efternavn" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Alder" Type="int" />
+    <Property Name="Køn" Type="int" />
+    <Property Name="Område" Type="int" />
+    <Property Name="Bio" Type="char" MaxLength="255" />
+    <Property Name="Profilbillede" Type="binary" MaxLength="50" />
+    <Property Name="Tlf" Type="char" MaxLength="8" />
+    <Property Name="Email" Type="char" MaxLength="63" Nullable="false" />
+    <Property Name="Kodeord" Type="char" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="Kommentar" EntityType="Self.Kommentar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Køn" EntityType="Self.Køn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Område" EntityType="Self.Område" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Profil" EntityType="Self.Profil" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

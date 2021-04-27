@@ -15,3 +15,9 @@ CREATE TABLE [dbo].[Kommentar] (
     [Kommentar]    CHAR (255) NOT NULL,
     PRIMARY KEY CLUSTERED ([Kommentar Id] ASC)
 );
+
+gammel
+"metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string='data source=&quot;localhost, 1433&quot;;initial catalog=vikar-db;user id=sa;password=&lt;#Password1&gt;;MultipleActiveResultSets=True;App=EntityFramework'""
+
+ny
+"data source=localhost, 1433; initial catalog=vikar-db; user id=sa; password=<#Password1>;"

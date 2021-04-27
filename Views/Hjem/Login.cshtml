@@ -10,24 +10,30 @@
 <body>
     <div class="login-container">
         <div class="login-box">
-            <form>
+            <form action ="/hjem/loginbruger" method="post">
                 <h1>Login</h1>
-                <label for="username">Brugernavn: </label>
-                <input id="username" type="text" value="">
+                <label for="email_login">Email: </label>
+                <input id="email_login" type="email" value="" name="email">
                 <label for="password">Password: </label>
-                <input id="password" type="password" value="">
+                <input id="password" type="password" value="" name="password">
                 <input id="login-button" type="submit" value="Login">
             </form>
         </div>
         <div class="login-box">
-            <form>
+            <form action ="/hjem/opretbruger" method="post">
                 <h1>Opret Bruger</h1>
-                <label for="username-up">Brugernavn: </label>
-                <input id="username-up" type="text" value="">
+                <label for="navn">Navn: </label>
+                <input id="navn" type="text" value="" name="fnavn">
+
+                <label for="efternavn">Efternavn: </label>
+                <input id="efternavn" type="text" value="" name="enavn">
+
                 <label for="password-up">Password: </label>
-                <input id="password-up" type="text" value="">
+                <input id="password-up" type="text" value="" name="password">
+
                 <label for="email">Email: </label>
-                <input id="email" type="email" value="">
+                <input id="email" type="email" value="" name="email">
+
                 <input id="signup-button" type="submit" value="Opret Bruger">
             </form>            
         </div>

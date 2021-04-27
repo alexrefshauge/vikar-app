@@ -2,18 +2,55 @@
 <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Kommentar">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Kommentar_Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kommentar_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bruger_Id" Type="Int32" Nullable="false" />
+    <Property Name="Kommentar1" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Køn">
+    <Key>
+      <PropertyRef Name="Køn_Id" />
+    </Key>
+    <Property Name="Køn_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Køn1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Login_Id" />
+    </Key>
+    <Property Name="Login_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brugernavn" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Kodeord" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Område">
+    <Key>
+      <PropertyRef Name="Område_Id" />
+    </Key>
+    <Property Name="Område_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Område1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="Profil">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Bruger_Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bruger_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Navn" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Efternavn" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Alder" Type="Int32" />
+    <Property Name="Køn" Type="Int32" />
+    <Property Name="Område" Type="Int32" />
+    <Property Name="Bio" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+    <Property Name="Profilbillede" Type="Binary" MaxLength="50" FixedLength="true" />
+    <Property Name="Tlf" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="63" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Kodeord" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="VikarEntity" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Kommentars" EntityType="Self.Kommentar" />
+    <EntitySet Name="Køn" EntityType="Self.Køn" />
+    <EntitySet Name="Logins" EntityType="Self.Login" />
+    <EntitySet Name="Område" EntityType="Self.Område" />
     <EntitySet Name="Profils" EntityType="Self.Profil" />
   </EntityContainer>
 </Schema>

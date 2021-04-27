@@ -8,13 +8,28 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
 
+@{ 
+    string loginEmail = null;
+
+    HttpCookie cookie = Request.Cookies.Get("Email");
+    if (cookie != null)
+    {
+        loginEmail = cookie.Value;
+    }
+}
+
+<body>
     <div class="navbar">
         <div class="nav">
             <a href="/">
                 Vikarapp
             </a>
+            @if(true) {
+            <p class="nav-user-email">
+                @loginEmail
+            </p>
+            }
             <ul>
                 <li>
                     Hjem

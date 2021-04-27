@@ -13,10 +13,10 @@ namespace vikar_app
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class VikarEntity : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public VikarEntity()
+            : base("name=VikarEntity")
         {
         }
     
@@ -26,6 +26,9 @@ namespace vikar_app
         }
     
         public virtual DbSet<Kommentar> Kommentars { get; set; }
+        public virtual DbSet<Køn> Køn { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<Område> Område { get; set; }
         public virtual DbSet<Profil> Profils { get; set; }
     }
 }
