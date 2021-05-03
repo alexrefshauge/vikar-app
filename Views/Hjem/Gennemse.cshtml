@@ -1,11 +1,12 @@
 ﻿@{
     ViewBag.Title = "Søg vikar";
+    List<Profil> hitList = ViewBag.HitList;
 }
 <div class="browse-container">
     <div class="search-container">
         <form method="GET" action="">
-            <input id="search-bar" type="text" placeholder="Søg her">
-            <select name ="menu"id="dropdown-menu">
+            <input id="search-bar" type="text" placeholder="Søg her" name="searchString">
+            <select name ="område" id="dropdown-menu">
                 <option value="sted1">sted1</option>
                 <option value="sted2">sted2</option>
                 <option value="sted3">sted3</option>
@@ -15,11 +16,21 @@
             </select>
             <input id="search-button" type="submit" value="Søg">
         </form>
-
     </div>
+    <p>@ViewBag.test</p>
     <div class="result-container">
         <ul>
-            
+            @if (hitList != null) { 
+                foreach(Profil profil in hitList)
+                {
+                    <li>
+                        @profil.Email
+                    </li>
+                }
+            } else
+            {
+                <p>hjælp!</p>
+            }
         </ul>
     </div>
 </div>

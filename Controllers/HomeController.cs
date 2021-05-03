@@ -33,9 +33,22 @@ namespace vikar_app.Controllers
         {
             return View();
         }
+        public ActionResult RedigerProfil()
+        {
+            return View();
+        }
+
         public ActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult GemProfil(string fnavn, string enavn, int tlf, string email, int område, int alder, string bio)
+        {
+            DH.AddValues(fnavn, enavn, alder, tlf, email, område, bio);
+
+            return Redirect("/hjem/profil");
         }
 
         [HttpPost]
@@ -69,8 +82,20 @@ namespace vikar_app.Controllers
                 return Redirect("/hjem/login");
             }
         }
-        public ActionResult Gennemse()
+        public ActionResult Gennemse(string searchString)
         {
+            System.Diagnostics.Debug.WriteLine(searchString);
+            if (searchString != null)
+            {
+                if (searchString.Length > 0)
+                { 
+                ViewBag.HitList = DH.SearchByName(searchString);
+                } else
+                {
+                    searchString = null;
+                }
+            }
+
             return View();
         }
     }

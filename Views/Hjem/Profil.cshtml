@@ -5,8 +5,6 @@
     ViewBag.Title = "Profil";
     DataHandler DH = new DataHandler();
     Profil brugerprofil = DH.GetProfil(email);
-
-    bool edit = true;
 }
 
 <div class="profile-container">
@@ -14,12 +12,10 @@
         <p>Navn</p>
         <p class="rediger">@brugerprofil.Navn</p>
         <button type="button" onclick="Prompt()">Rediger Oplysninger</button>
-        @* Indsæt navn *@
     </div>
     <div class="profile-personinfo-container">
-        <p>Alder</p>
-        <p>@brugerprofil.Alder</p>
-        @* Indsæt navn *@
+        <p>Efternavn</p>
+        <p>@brugerprofil.Efternavn</p>
     </div>
 </div>
 
@@ -27,12 +23,10 @@
     <div class="profile-personinfo-container">
         <p>Telefonnummer</p>
         <p>@brugerprofil.Tlf</p>
-        @* Indsæt navn *@
     </div>
     <div class="profile-personinfo-container">
         <p>Email</p>
         <p>@brugerprofil.Email</p>
-        @* Indsæt navn *@
     </div>
 </div>
 
@@ -40,7 +34,10 @@
     <div class="profile-personinfo-container">
         <p>Område</p>
         <p>@brugerprofil.Område</p>
-        @* Indsæt navn *@
+    </div>
+    <div class="profile-personinfo-container">
+        <p>Alder</p>
+        <p>@brugerprofil.Alder</p>
     </div>
 </div>
 
@@ -48,15 +45,14 @@
     <div class="profile-personinfo-container">
         <p>Bio</p>
         <p>@brugerprofil.Bio</p>
-        @* Indsæt navn *@
     </div>
 </div>
-
-<button type="button" onclick="@edit = false">Rediger Oplysninger</button>
 
 <div class="profile-container">
         <div class="profile-personinfo-container">
             <p>Kommentarer</p>
-            <p>Holdkæft hvor er han bare dygtig til de børn der, 10/10</p>
+            <p>God håndtering af krisesituationer</p>
         </div>
-    </div>
+</div>
+<a href="redigerprofil">Rediger profil</a>
+

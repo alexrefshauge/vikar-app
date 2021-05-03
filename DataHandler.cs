@@ -30,22 +30,27 @@ namespace vikar_app
                 return strBuilder.ToString();
             }
         }
-        public void AddValues(string navn, string efternavn, string alder, string telefonnummer, string email, int område, string bio)
+        public void AddValues(string fnavn, string enavn, int alder, int tlf, string email, int område, string bio)
         {
-
             try
             {
                 //vores connectionstring hentes fra Web.config
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Entities"].ConnectionString);
                 connection.Open();
-                string queryAddValue = "INSERT INTO Profil (Navn, Efternavn, Alder, Tlf, Email, Område, Bio) VALUES(@navn, @efternavn, @alder, @tlf, @email, @område, @bio);";
+                string queryAddValue = "" +
+                    "UPDATE Profil SET Navn = @navn WHERE Email = @email;" +
+                    "UPDATE Profil SET Efternavn = @enavn WHERE Email = @email;" +
+                    "UPDATE Profil SET Alder = @alder WHERE Email = @email;" +
+                    "UPDATE Profil SET Tlf = @tlf WHERE Email = @email;" +
+                    "UPDATE Profil SET Område = @område WHERE Email = @email;" +
+                    "UPDATE Profil SET Bio = @bio WHERE Email = @email; ";
+                    //(Navn, Efternavn, Alder, Tlf, Email, Område, Bio) VALUES(@navn, @efternavn, @alder, @tlf, @email, @område, @bio);";
                 SqlCommand cmd = new SqlCommand(queryAddValue, connection);
-
-                cmd.Parameters.AddWithValue("@navn", navn);
-                cmd.Parameters.AddWithValue("@efternavn", efternavn);
+                
+                cmd.Parameters.AddWithValue("@navn", enavn);
+                cmd.Parameters.AddWithValue("@efternavn", enavn);
                 cmd.Parameters.AddWithValue("@alder", alder);
-                cmd.Parameters.AddWithValue("@tlf", telefonnummer);
-                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@tlf", tlf);
                 cmd.Parameters.AddWithValue("@område", område);
                 cmd.Parameters.AddWithValue("@bio", bio);
                 cmd.ExecuteNonQuery();
@@ -59,15 +64,9 @@ namespace vikar_app
                 System.Diagnostics.Debug.WriteLine("ERROR EXCEPTION:" + ex);
             }  
         }
-        //Methode til at tilføje brugerinformationer til databasen via SqlClient
+        //Metode til at tilføje brugerinformationer til databasen via SqlClient
         public void AddUser(string navn, string efternavn, string email, string kodeord)
         {
-            System.Diagnostics.Debug.WriteLine(navn);
-            System.Diagnostics.Debug.WriteLine(efternavn);
-            System.Diagnostics.Debug.WriteLine(email);
-            System.Diagnostics.Debug.WriteLine(CreateHashSHA256(kodeord));
-
-
             try
             {
                 //vores connectionstring hentes fra Web.config
@@ -76,6 +75,7 @@ namespace vikar_app
                 string queryAddUser = "INSERT INTO Profil (Navn, Efternavn, Email, Kodeord) VALUES(@navn, @efternavn, @email, @kodeord);";
                 SqlCommand cmd = new SqlCommand(queryAddUser, connection);
 
+                //Her bruger vi vores HASH-metode, som vi har skrevet til at kryptere kodeordet.
                 string passwordHash = CreateHashSHA256(kodeord);
 
                 cmd.Parameters.AddWithValue("@navn", navn);
@@ -105,11 +105,13 @@ namespace vikar_app
                 string checkuser = "SELECT count(*) FROM Profil WHERE Email='" + email + "'";
                 SqlCommand cmd = new SqlCommand(checkuser, connection);
 
+                //vi tjekker om der findes en matchende email ved at bruge metoden ExecuteScalar, som returnerer antal hits i databasen. Denne laver vi om til en int
                 int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
                 System.Diagnostics.Debug.WriteLine("Check Email Query Succesfull");
                 connection.Close();
 
+                //Herefter tjekker vi om d
                 if (temp == 1)
                 {
                     return true;
@@ -197,6 +199,83 @@ namespace vikar_app
                 System.Diagnostics.Debug.WriteLine("ERROR EXCEPTION:" + ex);
                 return null;
             }
+        }
+
+        public List<Profil> SearchByName(string navn)
+        {
+            try
+            {
+                List<Profil> profiler = new List<Profil>();
+                
+                //vores connectionstring hentes fra Web.config
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Entities"].ConnectionString);
+                connection.Open();
+                string getprofil = "SELECT * FROM Profil WHERE Navn='" + navn + "'";
+                SqlCommand cmd = new SqlCommand(getprofil, connection);
+                int i = 0;
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        do
+                        {
+                            profiler.Add(new Profil()
+                            {
+                                Bruger_Id = reader.GetInt32(0),
+                                Navn = reader.GetString(1),
+                                Efternavn = reader.GetString(2),
+                                Alder = reader.GetInt32(3),
+                                Køn = reader.GetInt32(4),
+                                Område = reader.GetInt32(5),
+                                Bio = reader.GetString(6),
+                                Profilbillede = (byte[])reader[7],
+                                Tlf = reader.GetString(8),
+                                Email = reader.GetString(9)
+                            });
+
+                            //profiler[i].Bruger_Id = reader.GetInt32(0);
+                            //profiler[i].Navn = reader.GetString(1);
+                            //profiler[i].Efternavn = reader.GetString(2);
+                            //if (!Convert.IsDBNull(reader[3])) profiler[i].Alder = reader.GetInt32(3);
+                            //if (!Convert.IsDBNull(reader[4])) profiler[i].Køn = reader.GetInt32(4);
+                            //if (!Convert.IsDBNull(reader[5])) profiler[i].Område = reader.GetInt32(5);
+                            //if (!Convert.IsDBNull(reader[6])) profiler[i].Bio = reader.GetString(6);
+                            //if (!Convert.IsDBNull(reader[7])) profiler[i].Profilbillede = (byte[])reader[7];
+                            //if (!Convert.IsDBNull(reader[8])) profiler[i].Tlf = reader.GetString(8);
+                            //profiler[i].Email = reader.GetString(9);
+                            i++;
+
+                            System.Diagnostics.Debug.WriteLine(i);
+                        } while(reader.NextResult());                        
+                    }
+                }
+
+                System.Diagnostics.Debug.WriteLine("GetProfil Query Succesfull");
+                connection.Close();
+
+                return profiler;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ERROR EXCEPTION:" + ex);
+                return null;
+            }
+
+        }
+
+
+
+
+        public List<Profil> SearchByString(string searchString)
+        {
+            //vores connectionstring hentes fra Web.config
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Entities"].ConnectionString);
+            connection.Open();
+            string searchQuery = "SELECT * FROM Profil WHERE Navn='" + searchString + "'";
+            SqlCommand cmd = new SqlCommand(searchQuery, connection);
+
+            return null;
         }
     }
 }

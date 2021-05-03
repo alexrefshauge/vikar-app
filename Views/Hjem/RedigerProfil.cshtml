@@ -1,8 +1,4 @@
 ﻿@{
-    Layout = null;
-}
-
-@{
     //KIG EFTER COOKIE
     HttpCookie cookie = Request.Cookies.Get("Email");
     string email = cookie.Value;
@@ -11,16 +7,16 @@
     Profil brugerprofil = DH.GetProfil(email);
 }
 
-<form action="/home/gemprofil">
+<form action="/home/gemprofil" method="post">
     <div class="profile-container">
         <div class="profile-personinfo-container">
             <p>Navn</p>
-            <p class="rediger">@brugerprofil.Navn</p>
+            <input type="text" value="@brugerprofil.Navn" name="fnavn">
 
         </div>
         <div class="profile-personinfo-container">
-            <p>Alder</p>
-            <p>@brugerprofil.Alder</p>
+            <p>Efternavn</p>
+            <input type="text" value="@brugerprofil.Efternavn" name="enavn">
 
         </div>
     </div>
@@ -28,19 +24,24 @@
     <div class="profile-container">
         <div class="profile-personinfo-container">
             <p>Telefonnummer</p>
-            <p>@brugerprofil.Tlf</p>
+            <input type="text" value="@brugerprofil.Tlf" name="tlf">
 
         </div>
         <div class="profile-personinfo-container">
             <p>Email</p>
-
+            <input type="text" value="@brugerprofil.Email" name="email" disabled>
         </div>
     </div>
 
     <div class="profile-container">
         <div class="profile-personinfo-container">
             <p>Område</p>
-            <p>@brugerprofil.Område</p>
+            <input type="text" value="@brugerprofil.Område" name="område">
+
+        </div>
+                <div class="profile-personinfo-container">
+            <p>Alder</p>
+            <input type="text" value="@brugerprofil.Alder" name="alder">
 
         </div>
     </div>
@@ -48,12 +49,10 @@
     <div class="profile-container">
         <div class="profile-personinfo-container">
             <p>Bio</p>
-            <p>@brugerprofil.Bio</p>
+            <input type="text" value="@brugerprofil.Bio" name="bio">
 
         </div>
     </div>
-
-    <button type="button" onclick="@edit = false">Rediger Oplysninger</button>
 
     <div class="profile-container">
         <div class="profile-personinfo-container">
@@ -61,61 +60,5 @@
             <p>Holdkæft hvor er han bare dygtig til de børn der, 10/10</p>
         </div>
     </div>
-
     <button type="submit">Gem</button>
 </form>
-
-<p>-------------------------------------------------------------------------------------------</p>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
-        <p>Navn</p>
-        <p class="rediger">@brugerprofil.Navn</p>
-        <button type="button" onclick="Prompt()">Rediger Oplysninger</button>
-        @* Indsæt navn *@
-    </div>
-    <div class="profile-personinfo-container">
-        <p>Alder</p>
-        <p>@brugerprofil.Alder</p>
-        @* Indsæt navn *@
-    </div>
-</div>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
-        <p>Telefonnummer</p>
-        <p>@brugerprofil.Tlf</p>
-        @* Indsæt navn *@
-    </div>
-    <div class="profile-personinfo-container">
-        <p>Email</p>
-        <p>@brugerprofil.Email</p>
-        @* Indsæt navn *@
-    </div>
-</div>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
-        <p>Område</p>
-        <p>@brugerprofil.Område</p>
-        @* Indsæt navn *@
-    </div>
-</div>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
-        <p>Bio</p>
-        <p>@brugerprofil.Bio</p>
-        @* Indsæt navn *@
-    </div>
-</div>
-
-<button type="button" onclick="@edit = false">Rediger Oplysninger</button>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
-        <p>Kommentarer</p>
-        <p>Holdkæft hvor er han bare dygtig til de børn der, 10/10</p>
-    </div>
-</div>
-
