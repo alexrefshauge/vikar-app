@@ -5,32 +5,55 @@
 <div class="browse-container">
     <div class="search-container">
         <form method="GET" action="">
-            <input id="search-bar" type="text" placeholder="Søg her" name="searchString">
-            <select name ="område" id="dropdown-menu">
-                <option value="sted1">sted1</option>
-                <option value="sted2">sted2</option>
-                <option value="sted3">sted3</option>
-                <option value="sted4">sted4</option>
-                <option value="sted5">sted5</option>
-                <option value="sted6">sted6</option>
-            </select>
-            <input id="search-button" type="submit" value="Søg">
+            <div class="filter-container">
+
+                <select name="område" id="dropdown-menu">
+                    <option value="sted1">sted 1</option>
+                    <option value="sted2">sted 2</option>
+                    <option value="sted3">sted 3</option>
+                    <option value="sted4">sted 4</option>
+                    <option value="sted5">sted 5</option>
+                    <option value="sted6">sted 6</option>
+                </select>
+
+                <input id="search-bar" type="text" placeholder="Søg her" name="searchString">
+            </div>
+
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
         </form>
     </div>
     <p>@ViewBag.test</p>
     <div class="result-container">
-        <ul>
-            @if (hitList != null) { 
-                foreach(Profil profil in hitList)
-                {
-                    <li>
-                        @profil.Email
-                    </li>
-                }
-            } else
+        @if (hitList != null)
+        {
+            if (hitList.Count > 1)
             {
-                <p>hjælp!</p>
+                <p>@hitList.Count resultater</p>
             }
-        </ul>
+            else
+            {
+                <p>@hitList.Count resultat</p>
+            }
+            <ul>
+                @foreach (Profil profil in hitList)
+                {
+                <li>
+                    <img src="~/Content/avatar.jpg" />
+                    <p>@profil.Navn</p>
+                    <p>@profil.Efternavn</p>
+                    <p>@profil.Alder år</p>
+                    <p>@profil.Område</p>
+                </li>
+                }
+            </ul>
+        }
+        else
+        {
+
+            <p>hjælp!</p>
+
+        }
     </div>
 </div>

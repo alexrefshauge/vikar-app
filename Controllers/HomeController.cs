@@ -40,6 +40,18 @@ namespace vikar_app.Controllers
 
         public ActionResult Login()
         {
+            if (HttpContext.Request.Cookies.AllKeys.Contains("Email"))
+            {
+                string savedEmail = HttpContext.Request.Cookies.Get("Email").Value;
+                ViewBag.savedEmail = savedEmail;
+            } else
+            {
+                System.Diagnostics.Debug.WriteLine("cookie does not exist");
+            }
+
+
+
+
             return View();
         }
 
@@ -60,7 +72,7 @@ namespace vikar_app.Controllers
                 return Redirect("/hjem/login");
             } else
             {
-                return Redirect("/email-taget");
+                return Redirect("/hjem/login");
             }
         }
 
@@ -82,19 +94,24 @@ namespace vikar_app.Controllers
                 return Redirect("/hjem/login");
             }
         }
+
+        public ActionResult Logud()
+        {
+            HttpContext.Response.Cookies["Email"].Expires = DateTime.Now.AddDays(-1);
+
+            return Redirect("/hjem/login");
+        }
+
         public ActionResult Gennemse(string searchString)
         {
             System.Diagnostics.Debug.WriteLine(searchString);
-            if (searchString != null)
+
+            if (searchString == null)
             {
-                if (searchString.Length > 0)
-                { 
-                ViewBag.HitList = DH.SearchByName(searchString);
-                } else
-                {
-                    searchString = null;
-                }
+                searchString = "";
             }
+
+            ViewBag.HitList = DH.SearchByName(searchString);
 
             return View();
         }

@@ -1,6 +1,18 @@
 ﻿@{
-    ViewBag.Title ="Login";
+        ViewBag.Title ="Login";
+
+        string savedEmail;
+
+        if (ViewBag.savedEmail != null)
+        {
+            savedEmail = ViewBag.savedEmail;
+        }
+        else
+        {
+            savedEmail = "";
+        }
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,15 +22,17 @@
 <body>
     <div class="login-container">
         <div class="login-box">
-            <form action ="/hjem/loginbruger" method="post">
+            <form action="/hjem/loginbruger" method="post">
                 <h1>Login</h1>
                 <label for="email_login">Email: </label>
-                <input id="email_login" type="email" value="" name="email">
+                <input id="email_login" type="email" value="@savedEmail" name="email">
                 <label for="password">Password: </label>
                 <input id="password" type="password" value="" name="password">
                 <input id="login-button" type="submit" value="Login">
             </form>
         </div>
+
+
         <div class="login-box">
             <form action ="/hjem/opretbruger" method="post">
                 <h1>Opret Bruger</h1>

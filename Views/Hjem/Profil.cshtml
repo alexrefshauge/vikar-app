@@ -1,5 +1,5 @@
 ﻿@{
-    //KIG EFT%ER COOKIE
+    //KIG EFTER COOKIE
     HttpCookie cookie = Request.Cookies.Get("Email");
     string email = cookie.Value;
     ViewBag.Title = "Profil";
@@ -7,52 +7,39 @@
     Profil brugerprofil = DH.GetProfil(email);
 }
 
-<div class="profile-container">
-    <div class="profile-personinfo-container">
+
+<div class="profile-info-container">
+    <div class="info-field">
         <p>Navn</p>
-        <p class="rediger">@brugerprofil.Navn</p>
-        <button type="button" onclick="Prompt()">Rediger Oplysninger</button>
+        <p>@brugerprofil.Navn</p>
     </div>
-    <div class="profile-personinfo-container">
+
+    <div class="info-field">
         <p>Efternavn</p>
         <p>@brugerprofil.Efternavn</p>
     </div>
-</div>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
+    <div class="info-field">
         <p>Telefonnummer</p>
         <p>@brugerprofil.Tlf</p>
     </div>
-    <div class="profile-personinfo-container">
+    <div class="info-field">
         <p>Email</p>
         <p>@brugerprofil.Email</p>
     </div>
-</div>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
+    <div class="info-field">
         <p>Område</p>
         <p>@brugerprofil.Område</p>
     </div>
-    <div class="profile-personinfo-container">
+    <div class="info-field">
         <p>Alder</p>
-        <p>@brugerprofil.Alder</p>
+        <p>@brugerprofil.Alder år</p>
     </div>
-</div>
-
-<div class="profile-container">
-    <div class="profile-personinfo-container">
+    <div class="info-field">
         <p>Bio</p>
         <p>@brugerprofil.Bio</p>
     </div>
+
+    <a class="btn-rediger-profil" href="redigerprofil">Rediger profil</a>
 </div>
 
-<div class="profile-container">
-        <div class="profile-personinfo-container">
-            <p>Kommentarer</p>
-            <p>God håndtering af krisesituationer</p>
-        </div>
-</div>
-<a href="redigerprofil">Rediger profil</a>
 

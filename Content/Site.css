@@ -26,7 +26,7 @@ font-family: 'Rubik', sans-serif;
 }
 
 input, select {
-    border: 1px solid #808080;
+    border: 1px dashed #808080;
 }
 
 input[type=submit] {
@@ -67,15 +67,12 @@ body {
 
 /*landing page*/
 .landing-page {
+    margin: auto auto;
     margin-top:3rem;
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
-    width: 100%;
-}
-
-.landing-soger-vikar, .landing-er-vikar {
-
+    width: 80%;
 }
 
 .landing-page-card h1:first-of-type{
@@ -93,13 +90,15 @@ body {
 
 .landing-page-card {
     height: 80vh;
-    width:500px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(-45deg, var(--c-main-blue), var(--c-main-green));
-    opacity: 0.8;
+    opacity: 0.6;
+    transform: perspective(1000px) scale(1) rotate3d(0, 0, 0, 2deg) translateY(0px);
+    transition: 1s cubic-bezier(0,.94,.36,.99);
 }
 
 .landing-page-card i {
@@ -107,21 +106,11 @@ body {
     font-size:4rem;
 }
 
-.landing-page-card:hover {
-    opacity: 1;
-}
-    /*Profil*/
-    .profile-container {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    padding-top:100px;
-    width: 80%;
-}
-
-.profile-personinfo-container {
-    width: 100%;
-}
+    .landing-page-card:hover {
+        opacity: 1;
+        transform: perspective(1000px) scale(1.05) rotate3d(1, 0, 0, 10deg) translateY(-20px);
+        transition: 1s cubic-bezier(0,.94,.36,.99);
+    }
 
 /*footer*/
 .footer-container {
@@ -145,12 +134,180 @@ body {
     color: var(--c-link);
 }
 
+/*Profil*/
+.profile-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+.info-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 25%;
+    padding: 2rem 0 2rem 0;
+
+    border: 0px solid white;
+    border-bottom: 1px solid var(--c-bg-grey);
+}
+
+.info-field input {
+    border: none;
+    padding: 1rem;
+    background-color: var(--c-bg-grey);
+
+    overflow: hidden;
+    overflow-wrap:normal;
+
+    transition: .1s ease-in;
+}
+
+.info-field input[type=number]::-webkit-inner-spin-button {
+    background-color: var(--c-main-blue);
+    display: none;
+}
+
+.info-field input:focus {
+    outline: none;
+    padding: 2rem 1rem;
+    transition: .1s ease-out;
+}
+
+.btn-rediger-profil {
+    background-color: var(--c-bg-grey);
+    margin-top: 2rem;
+    padding: 2rem;
+
+    border: none;
+
+    transition: .1s ease-in;
+}
+
+.btn-rediger-profil:hover {
+    background-color: var(--c-main-green);
+
+    transition: .1s ease-out;
+}
+
 /*Browse*/
 .browse-container {
     padding: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.search-container {
+    width: 50%;
+    display:flex;
+    flex-direction:row-reverse;
+}
+
+.search-container .filter-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.search-container form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.search-container form button{
+    width:4rem;
+    height:2rem;
+
+    cursor: pointer;
+
+    background-color: var(--c-bg-grey);
+    color: #fff;
+
+        transition: .1s ease-in;
+}
+
+.search-container form button:hover{
+    background-color: var(--c-main-green);
+
+    transition: .1s ease-out;
+}
+
+.search-container form button i {
+    color: var(--c-font-dark);
+
+    transition: .1s ease-in;
+}
+
+.search-container form button:hover i {
+
+    animation: .2s search-hover;
+
+    transition: .1s ease-in;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    width: 50%;
+}
+
+.result-container ul {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.result-container li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    padding: 1rem;
+    border: 0px solid white;
+    border-bottom: 1px solid var(--c-bg-grey);
+
+    transition: .1s ease-in;
+}
+
+.result-container ul li:first-of-type {
+    border: 0px solid white;
+    border-top: 1px solid var(--c-bg-grey);
+    border-bottom: 1px solid var(--c-bg-grey);
+}
+
+.result-container li img{
+    width: 64px;
+    height: 64px;
+}
+
+.result-container p {
+    color: var(--c-font-dark);
+}
+
+.result-container li:hover {
+    background-color: var(--c-bg-grey);
+    cursor: pointer;
+
+    transition: .1s ease-out;
+}
+
+@keyframes search-hover {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+    50% {
+        transform: rotate(12deg) translateY(-2px);
+    }
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
 }
 
 /*Login*/
@@ -160,7 +317,7 @@ body {
     flex-direction: row;
     justify-content:space-evenly;
 }
-.login-box form  *{
+.login-box form *{
     font-size: 1.5rem;
     margin: .5rem;
     padding: .5rem;
@@ -170,12 +327,34 @@ body {
     font-size: 3rem;
 }
 
-
 .login-box form{
     margin: 50px;
 }
-.login-box{
+
+    .login-box form input[type=submit] {
+        background-color: var(--c-bg-grey);
+        transition: .2s cubic-bezier(0,.94,.36,.99);
+        border: none;
+    }
+
+    .login-box form input[type=submit]:hover {
+        background-color: var(--c-main-green);
+        transition: .2s cubic-bezier(0,.94,.36,.99);
+    }
+
+.login-box {
     width: 25%;
-    border-radius: 25px;
-    border: 8px solid var(--c-main-green);
+    border: 4px solid var(--c-main-green);
+    outline: 2px var(--c-main-green) dashed;
+    outline-offset: -2px;
+    transition: .2s cubic-bezier(0,.94,.36,.99);
 }
+
+.login-box:focus-within {
+    width: 25%;
+    border: 4px solid var(--c-main-green);
+    outline: 2px var(--c-main-green) dashed;
+    outline-offset: 6px;
+    transition: .2s cubic-bezier(0,.94,.36,.99);
+}
+

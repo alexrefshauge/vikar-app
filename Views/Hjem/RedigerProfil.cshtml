@@ -7,58 +7,67 @@
     Profil brugerprofil = DH.GetProfil(email);
 }
 
-<form action="/home/gemprofil" method="post">
-    <div class="profile-container">
-        <div class="profile-personinfo-container">
-            <p>Navn</p>
-            <input type="text" value="@brugerprofil.Navn" name="fnavn">
-
-        </div>
-        <div class="profile-personinfo-container">
-            <p>Efternavn</p>
-            <input type="text" value="@brugerprofil.Efternavn" name="enavn">
-
-        </div>
+<form class="profile-info-container" action="/hjem/gemprofil" method="post">
+    <div class="info-field">
+        <p>Navn</p>
+        <input type="text" value="@brugerprofil.Navn" name="fnavn">
     </div>
 
-    <div class="profile-container">
-        <div class="profile-personinfo-container">
-            <p>Telefonnummer</p>
-            <input type="text" value="@brugerprofil.Tlf" name="tlf">
-
-        </div>
-        <div class="profile-personinfo-container">
-            <p>Email</p>
-            <input type="text" value="@brugerprofil.Email" name="email" disabled>
-        </div>
+    <div class="info-field">
+        <p>Efternavn</p>
+        <input type="text" value="@brugerprofil.Efternavn" name="enavn">
+    </div>
+    <div class="info-field">
+        <p>Telefonnummer</p>
+        <input id="inputTlf" type="text" value="@brugerprofil.Tlf" name="tlf" onchange="inputTlfHandler()">
+    </div>
+    <div class="info-field">
+        <p>Email</p>
+        <input type="email" value="@brugerprofil.Email" name="email" readonly>
+    </div>
+    <div class="info-field">
+        <p>Område</p>
+        <input type="number" value="@brugerprofil.Område" name="område">
+    </div>
+    <div class="info-field">
+        <p>Alder</p>
+        <input type="number" value="@brugerprofil.Alder" name="alder">
+    </div>
+    <div class="info-field">
+        <p>Bio</p>
+        <input type="text" value="@brugerprofil.Bio" name="bio">
     </div>
 
-    <div class="profile-container">
-        <div class="profile-personinfo-container">
-            <p>Område</p>
-            <input type="text" value="@brugerprofil.Område" name="område">
-
-        </div>
-                <div class="profile-personinfo-container">
-            <p>Alder</p>
-            <input type="text" value="@brugerprofil.Alder" name="alder">
-
-        </div>
-    </div>
-
-    <div class="profile-container">
-        <div class="profile-personinfo-container">
-            <p>Bio</p>
-            <input type="text" value="@brugerprofil.Bio" name="bio">
-
-        </div>
-    </div>
-
-    <div class="profile-container">
-        <div class="profile-personinfo-container">
-            <p>Kommentarer</p>
-            <p>Holdkæft hvor er han bare dygtig til de børn der, 10/10</p>
-        </div>
-    </div>
-    <button type="submit">Gem</button>
+    <input class="btn-rediger-profil" type="submit" value="Gem" />
 </form>
+
+<script>
+    //fejlhåndtering af inputfelt til telefonnumre
+    var inputTlf = document.getElementById("inputTlf");
+    const numberLength = 8;
+
+    const checkPhonenumber = (number) => {
+        //et telefonnummer skal være på 8 tal
+        if (number.length != numberLength) {
+            return false;
+        } else {
+            //isNaN returnerer true,
+            //hvis der er bogstaver i en string
+            if (!isNaN(number)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    //tilknyttes elementets event: onchange
+    const inputTlfHandler = () => {
+        if (!checkPhonenumber(inputTlf.value)) {
+            inputTlf.value = "";
+            alert("Telefonnummer er ikke gyldigt");
+        } else {
+            return;
+        }
+    }
+</script>

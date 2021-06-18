@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>@ViewBag.Title - Vikarapp</title>
+
     <script src="https://kit.fontawesome.com/9df18aaffa.js" crossorigin="anonymous"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -25,17 +27,12 @@
             <a href="/">
                 Vikarapp
             </a>
-            @if(true) {
+            @if(loginEmail != null) {
             <p class="nav-user-email">
                 @loginEmail
             </p>
+            <a href="/hjem/logud">logud</a>
             }
-            <ul>
-                <li>
-                    Hjem
-                </li>
-
-            </ul>
         </div>
     </div>
     
@@ -51,7 +48,7 @@
                 <p>Thode Studios</p>
                 <p>Klassevej 69</p>
                 <p>8600 Silkeborg</p>        
-                <p>42 04 20 69</p>
+                <p>45+ 11 11 11 11</p>
                 <p>thodestudios@gmail.com</p>
             </div>
             <div>
